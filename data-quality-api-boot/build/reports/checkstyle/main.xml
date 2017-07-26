@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.8.2">
+<file name="E:\Projects\DataQualityApi\data-quality-api-boot\src\main\java\Library.java">
+</file>
+<file name="E:\Projects\DataQualityApi\data-quality-api-boot\src\main\java\cn\com\easystudio\api\dataquality\DataQualityApiApplication.java">
+<error line="6" severity="warning" message="注释应与第7行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+</file>
+</checkstyle>
