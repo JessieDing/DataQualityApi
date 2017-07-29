@@ -1,32 +1,23 @@
 group 'cn.com.easystudio'
 version '1.0-SNAPSHOT'
 
-
-buildscript {
-    ext {
-        springBootVersion = '1.5.4.RELEASE'
-    }
-
-    repositories {
-        maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-        //mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
-    }
+ext {
+    buildLabel = 'Developer-1'
+    buildData = new Date().format("dd/MM/yyyy HH:mm")
 }
-
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 apply plugin: 'checkstyle'
 apply plugin: 'jacoco'
-sourceCompatibility = 1.5
 
 checkstyle {
     toolVersion = '7.8.2'
 }
+
+project.group = 'cn.com.easystudio'
+project.version = '1.0-SNAPSHOT'
 
 jacoco {
     toolVersion = "0.7.6.201602180812"
@@ -35,15 +26,14 @@ jacoco {
 jacoco {
     applyTo run
 }
-task applicationCodeCoverageReport(type:JacocoReport){
+task applicationCodeCoverageReport(type: JacocoReport) {
     executionData run
     sourceSets sourceSets.main
 }
 
 
-
 repositories {
-    mavenCentral()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 sourceCompatibility = 1.8
@@ -57,18 +47,33 @@ checkstyle {
 }
 
 dependencies {
-    compile 'joda-time:joda-time:2.9.9'
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
-    compile("org.springframework.boot:spring-boot-starter")
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework:spring-jdbc")
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
-    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile(
+            'org.springframework.boot:spring-boot-starter',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-aop',
+            'org.springframework.boot:spring-boot-starter-actuator',
+//            'org.springframework.boot:spring-boot-starter-security',
+//            'org.springframework.boot:spring-boot-starter-hateoas',
+//            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.springframework.boot:spring-boot-starter-data-rest',
+//            'org.springframework.hateoas:spring-hateoas',
+            'org.springframework.ws:spring-ws-core',
+            'org.springframework.ws:spring-ws-support',
+            'com.fasterxml.jackson.core:jackson-databind',
+            'com.fasterxml.jackson.core:jackson-annotations',
+            'org.apache.httpcomponents:httpclient',
+//            'org.hibernate:hibernate-validator',
+            'commons-io:commons-io:2.4',
+            'io.springfox:springfox-swagger2:2.7.0',
+            'io.springfox:springfox-swagger-ui:2.7.0',
+//            'javax.transaction:jta:1.1',
+    )
+    testCompile(
+            'org.springframework.boot:spring-boot-starter-test',
+//            'org.springframework.security:spring-security-test',
+            'org.mockito:mockito-all:1.10.19',
+            'com.jayway.jsonpath:json-path-assert'
+    )
 }
 
 springBoot {
