@@ -3,6 +3,8 @@
 <file name="E:\Projects\DataQualityApi\data-quality-api-boot\src\main\java\Library.java">
 </file>
 <file name="E:\Projects\DataQualityApi\data-quality-api-boot\src\main\java\cn\com\easystudio\api\dataquality\DataQualityApiApplication.java">
-<error line="6" severity="warning" message="注释应与第7行代码同样缩进4个缩进符，而不是0个。" source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="4" severity="warning" message="&apos;org.springframework.boot.SpringApplication&apos; 应该与以前的导入组分隔一个空行。" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="E:\Projects\DataQualityApi\data-quality-api-boot\src\main\java\cn\com\easystudio\api\dataquality\controller\addresses\AddressSearchController.java">
 </file>
 </checkstyle>
