@@ -14,7 +14,8 @@ import java.io.IOException;
 public class AxwavUserAgentInterceptor implements ClientHttpRequestInterceptor {
     private String keyId;
 
-    @Value("${endpoint.similarAddress.key}") private String similarAddressKey;
+    @Value("${endpoint.similarAddress.key}")
+    private String similarAddressKey;
 
     @Override
     public ClientHttpResponse intercept(HttpRequest request,

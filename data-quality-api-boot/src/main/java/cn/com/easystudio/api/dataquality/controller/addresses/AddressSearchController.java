@@ -18,12 +18,12 @@ import javax.validation.constraints.NotNull;
 @Api(value = "Data Quality API")
 @Validated
 public class AddressSearchController {
-   /*private final HRASearchSimilarAddressesDao addressesSearchDao;
+    private final HRASearchSimilarAddressesDao addressesSearchDao;
 
     @Autowired
     public AddressSearchController(HRASearchSimilarAddressesDao addressesSearchDao) {
         this.addressesSearchDao = addressesSearchDao;
-    }*/
+    }
 
     @ApiOperation(value = "Address Search", notes = Params.ADDRESSES_SEARCH_NOTES, protocols = "https")
     @RequestMapping(path = "/addresses/search", method = RequestMethod.GET)
