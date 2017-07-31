@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-@Component
+//@Component
 public class AxwavUserAgentInterceptor implements ClientHttpRequestInterceptor {
     private String keyId;
 

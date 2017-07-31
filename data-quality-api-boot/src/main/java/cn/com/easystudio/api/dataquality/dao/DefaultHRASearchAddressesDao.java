@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 
-@Component
+//@Component
 public class DefaultHRASearchAddressesDao implements HRASearchSimilarAddressesDao {
     @Value("${endpoint.similarAddress.key}")
     private String key;
